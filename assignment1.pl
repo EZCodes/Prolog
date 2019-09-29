@@ -24,3 +24,9 @@ add2(s(p(X)),Y,Z) :- add2(X,Y,Z).
 add2(p(X),Y,p(Z)) :- add2(X,Y,Z).
 add2(s(X),Y,s(Z)) :- add2(X,Y,Z).
 
+minus(0,0).
+minus(p(s(X)),Z) :- minus(X,Z).
+minus(s(p(X)),Z) :- minus(X,Z).
+minus(p(X),s(Z)) :- minus(X,Z).
+minus(s(X),p(Z)) :- minus(X,Z).
+
