@@ -32,5 +32,8 @@ minus(s(p(X)),Z) :- minus(X,Z).
 minus(p(X),s(Z)) :- minus(X,Z).
 minus(s(X),p(Z)) :- minus(X,Z).
 
+subtract(X,Y,Z) :- minus(Y,S), add2(X,S,Z).
+subtract(X,(-Y),Z) :- add2(X,Y,Z).
+
 
 
