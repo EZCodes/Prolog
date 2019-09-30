@@ -38,6 +38,7 @@ minus(p(X),s(Z)) :- minus(X,Z).
 minus(s(X),p(Z)) :- minus(X,Z).
 minus(X-Y,Z) :- subtract(X,Y,S), minus(S,Z).
 minus(X+Y,Z) :- add2(X,Y,S), minus(S,Z).
+minus((-X),Z) :- minus(X,S), minus(S,Z).
 
 subtract(X,Y,Z) :- minus(Y,S), add2(X,S,Z).
 subtract(X,(-Y),Z) :- add2(X,Y,Z).
