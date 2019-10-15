@@ -9,10 +9,18 @@ add(0,X,X).
 add(s(X),Y,s(Z)) :- add(X,Y,Z).
 
 add2(0,0,0).
-add2(0,s(p(X)),Z) :- add2(0,X,Z).
-add2(0,p(s(X)),Z) :- add2(0,X,Z).
-add2(0,s(s(X)),s(Z)) :- add2(0,s(X),Z).
-add2(0,p(p(X)),p(Z)) :- add2(0,p(X),Z).
+
+add2(0,s(s(p(X))),Z) :- add2(0,s(X),Z).
+add2(0,p(p(s(X))),Z) :- add2(0,p(X),Z).
+add2(0,s(p(p(X))),Z) :- add2(0,p(X),Z).
+add2(0,p(s(s(X))),Z) :- add2(0,s(X),Z).
+add2(0,s(p(0)),0). 
+add2(0,p(s(0)),0). 
+add2(0,s(p(s(p(X)))),Z) :- add2(0,X,Z).
+add2(0,p(s(p(s(X)))),Z) :- add2(0,X,Z).
+
+add2(0,s(s(s(X))),s(Z)) :- add2(0,s(s(X)),Z).
+add2(0,p(p(p(X))),p(Z)) :- add2(0,p(p(X)),Z).
 add2(0,p(X+Y),p(Z)) :- add2(0,X,S), add2(0,Y,Q), add2(S,Q,Z). 
 add2(0,s(X+Y),s(Z)) :- add2(0,X,S), add2(0,Y,Q), add2(S,Q,Z). 
 add2(0,p(X-Y),p(Z)) :- add2(0,X,S), add2(0,Y,Q), subtract(S,Q,Z). 
@@ -20,9 +28,8 @@ add2(0,s(X-Y),s(Z)) :- add2(0,X,S), add2(0,Y,Q), subtract(S,Q,Z).
 add2(0,s(-X),Z) :- minus(X,S), add2(0,s(S),Z).
 add2(0,p(-X),Z) :- minus(X,S), add2(0,p(S),Z).
 
-
-
-
+add2(0,s(s(0)),s(s(0))).
+add2(0,p(p(0)),p(p(0))).
 add2(0,s(0),s(0)).
 add2(0,p(0),p(0)).
 
