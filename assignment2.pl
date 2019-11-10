@@ -1,6 +1,6 @@
 %Exercise 1
 
-s1 --> ublock(Count), vblock(CountTwo),{ Count is CountTwo * 2 }.
+s --> ublock(Count), vblock(CountTwo),{ Count is CountTwo * 2 }.
 
 ublock(0) --> [2].
 ublock(NewCount) --> [0], ublock(Count), {NewCount is Count+1}.
@@ -12,7 +12,7 @@ vblock(NewCount) --> [1], vblock(Count), {NewCount is Count+1}.
 
 %Exercise 2
 
-s2 --> col(X),nat(Q),pet(A),col(Y),nat(W),pet(S),col(Z),nat(E),pet(D),{X=\=Y,Y=\=Z,X=\=Z, Q=\=W,W=\=E,Q=\=E, A=\=S,S=\=D,D=\=A}.
+s --> col(X),nat(Q),pet(A),col(Y),nat(W),pet(S),col(Z),nat(E),pet(D),{X=\=Y,Y=\=Z,X=\=Z, Q=\=W,W=\=E,Q=\=E, A=\=S,S=\=D,D=\=A}.
 col(1) --> [red].
 col(2) --> [green].
 col(3) --> [blue].
